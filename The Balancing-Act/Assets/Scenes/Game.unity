@@ -204,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 456473962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -218,7 +218,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 456473962}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 84afae573e50674468037ec5aa8171d9, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -251,7 +251,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 84afae573e50674468037ec5aa8171d9, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e3670ba29cc56409c4fa83b3252e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 456473966}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,3 +352,94 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1267515602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1267515603}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1267515603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267515602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1806807801}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1806807800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806807801}
+  - component: {fileID: 1806807802}
+  m_Layer: 0
+  m_Name: SpriteManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1806807801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806807800}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1267515603}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1806807802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806807800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9abf2693c67c4a418b640727772821f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockSprites:
+  - {fileID: 21300000, guid: 44cced520ecfd9f4292979a4fe8268c4, type: 3}
+  - {fileID: 21300000, guid: 17198718c5735204999fb13dc36e290f, type: 3}
+  - {fileID: 21300000, guid: b6fc60785b6a795478135ce6f7712c5a, type: 3}
+  - {fileID: 21300000, guid: 3c227d230cca14c42822692b6aff3459, type: 3}
+  - {fileID: 21300000, guid: 6c35396cb8128474a8a73c6b19f2fe1f, type: 3}
+  - {fileID: 21300000, guid: 4967dfcee94bddd4ba1430cb6fa1f304, type: 3}
+  - {fileID: 21300000, guid: 382df89af99b9f2459dd19206e68a63d, type: 3}
+  - {fileID: 21300000, guid: dd29f35641da38647a1eeb1028211f1a, type: 3}
+  - {fileID: 21300000, guid: 37920ac3813690349a856bbe19a86e2b, type: 3}
+  - {fileID: 21300000, guid: d9c0dd5cdac07b145be73329e489869a, type: 3}
+  - {fileID: 21300000, guid: ed0c2c8a99e92e14ba740ac8aa428288, type: 3}
+  - {fileID: 21300000, guid: fe3e0a556829be24bb87c912d79e872d, type: 3}
+  - {fileID: 21300000, guid: aa0c741df9dd8634c8d84fd9ba2b0e3d, type: 3}
+  - {fileID: 21300000, guid: 3d6064e2e1cd7214e9f67f3a68f494fb, type: 3}
+  - {fileID: 21300000, guid: 9397418d1d7b12543bf27fb61b93bbea, type: 3}
+  - {fileID: 21300000, guid: ee12d2bc9f5c8554d97d5beb9dc4b275, type: 3}
