@@ -31,8 +31,12 @@ public class PlatformBehavior : MonoBehaviour
 
     private void RotatePlatform()
     {
+        /*
         float rotation = -LowPassAccelerometer().x;
         Debug.Log(LowPassAccelerometer().x);
         transform.rotation = Quaternion.Euler(0f, 0f, rotation * torque);
+        */
+
+        float torque = -Input.acceleration.x;
     }
 }
