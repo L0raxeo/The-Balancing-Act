@@ -5,6 +5,11 @@ using UnityEngine;
 public class BlockBehavior : MonoBehaviour
 {
 
+    private void Start()
+    {
+        GameObject.FindObjectOfType<ScoreManager>().SetScore(1, true);
+    }
+
     private void Update()
     {
         CheckVoid();
@@ -19,5 +24,6 @@ public class BlockBehavior : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+        GameObject.FindObjectOfType<HeartManager>().SubtractLife();
     }
 }

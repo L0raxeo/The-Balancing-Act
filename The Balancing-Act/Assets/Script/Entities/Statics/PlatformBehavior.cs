@@ -13,6 +13,11 @@ public class PlatformBehavior : MonoBehaviour
         RotatePlatform();
     }
 
+    public void SetSimulated(bool simulated)
+    {
+        rb.simulated = simulated;
+    }
+
     private void RotatePlatform()
     {
         float torque = -Input.acceleration.x;
