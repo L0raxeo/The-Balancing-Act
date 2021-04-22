@@ -5,6 +5,7 @@ public class LevelManager : MonoBehaviour
 {
 
     public StateManager stateManager;
+    public ScoreManager scoreManager;
 
     public Stopwatch stopwatch;
     public GameObject blockPrefab;
@@ -12,28 +13,27 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         stopwatch = new Stopwatch();
-        StartGame();
     }
 
-    public void StartGame()
+    public void StartGame(string type)
     {
         stopwatch.Start();
+
+        scoreManager.SetScore(0, false);
+        GameObject.FindObjectOfType<HeartManager>().ResetLives();
     }
 
     public void StopGame()
     {
         stopwatch.Stop();
+
+        stateManager.SetState("Stats State", false);
+        // check highscore with scoremanager.submiteScore
     }
 
     private void Update()
     {
         if (stateManager.currentState == "Game State") UpdateGame();
-        else if (stateManager.currentState == "Menu State") UpdateMenu();
-    }
-
-    private void UpdateMenu()
-    {
-
     }
 
     private bool blockPlaced = false;
