@@ -14,7 +14,7 @@ public class BlockRenderer : MonoBehaviour
     private void setPosition()
     {
         float xRan = Random.Range(-3, 3);
-        transform.position = new Vector3(xRan, 5f, 0f); // y will be changed to just above the camera
+        transform.position = new Vector3(xRan, 10f, 0f); // y will be changed to just above the camera
     }
 
     private void setSprite()

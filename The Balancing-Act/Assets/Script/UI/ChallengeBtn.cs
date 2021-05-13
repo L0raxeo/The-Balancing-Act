@@ -8,7 +8,7 @@ public class ChallengeBtn : MonoBehaviour
     public void OnClick()
     {
         GameObject.FindObjectOfType<StateManager>().SetState("Game State", false);
-        GameObject.FindObjectOfType<LevelManager>().StartGame("");
+        GameObject.FindObjectOfType<LevelManager>().StartGame("Challenge");
     }
 
 }

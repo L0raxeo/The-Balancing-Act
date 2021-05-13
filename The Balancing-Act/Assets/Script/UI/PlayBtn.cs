@@ -10,7 +10,7 @@ public class PlayBtn : MonoBehaviour
     public void OnClick()
     {
         stateManager.SetState(stateManager.previousState, false);
-        GameObject.FindObjectOfType<LevelManager>().StartGame(""); // type of game goes in ""
+        GameObject.FindObjectOfType<LevelManager>().StartGame(GameObject.FindObjectOfType<LevelManager>().gamemode);
     }
 
 }

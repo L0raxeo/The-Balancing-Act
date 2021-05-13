@@ -18,12 +18,13 @@ public class BlockBehavior : MonoBehaviour
     private void CheckVoid()
     {
         // -10 is the limit
-        if (transform.position.y <= -7) Die();
+        if (transform.position.y <= -15) Die();
     }
 
     public void Die()
     {
         Destroy(gameObject);
-        GameObject.FindObjectOfType<HeartManager>().SubtractLife();
+        if (GameObject.FindObjectOfType<StateManager>().currentState == "Game State")
+            GameObject.FindObjectOfType<HeartManager>().SubtractLife();
     }
 }

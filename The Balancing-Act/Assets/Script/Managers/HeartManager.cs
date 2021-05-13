@@ -11,6 +11,7 @@ public class HeartManager : MonoBehaviour
 
     public void SubtractLife()
     {
+
         heart[lives].GetComponent<Animator>().SetBool("Destroyed", true);
         lives -= 1;
         CheckDeath();
@@ -20,6 +21,10 @@ public class HeartManager : MonoBehaviour
     {
         foreach (GameObject o in heart)
             o.SetActive(true);
+
+        foreach (GameObject a in heart)
+            a.GetComponent<Animator>().SetBool("Destroyed", false);
+
         lives = 2;
         CheckDeath();
     }

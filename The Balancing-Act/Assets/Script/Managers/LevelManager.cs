@@ -10,22 +10,35 @@ public class LevelManager : MonoBehaviour
     public Stopwatch stopwatch;
     public GameObject blockPrefab;
 
+    public string gamemode;
+
     private void Start()
     {
         stopwatch = new Stopwatch();
     }
 
-    public void StartGame(string type)
+    public void StartGame(string gamemode)
     {
-        stopwatch.Start();
+        this.gamemode = gamemode;
 
-        scoreManager.SetScore(0, false);
+        stopwatch.Start();
+        scoreManager.gamemode = gamemode;
+        scoreManager.ResetScore();
         GameObject.FindObjectOfType<HeartManager>().ResetLives();
     }
 
     public void StopGame()
     {
         stopwatch.Stop();
+        stopwatch.Reset();
+
+        foreach (BoxCollider2D bc in GameObject.FindObjectsOfType<BoxCollider2D>())
+        {
+            if (bc.gameObject.tag != "Block")
+                continue;
+
+            bc.isTrigger = true;
+        }
 
         stateManager.SetState("Stats State", false);
         // check highscore with scoremanager.submiteScore
